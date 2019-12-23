@@ -1,13 +1,13 @@
 <section class="result-layout-container">
-    <section style="width: 100%; position: fixed; margin: 0; top: 0; padding: 10px; background-color: greenyellow; z-index: 10000;">
+    <section class="sticky-header-wrapper">
     <section class="result-layout-header">
         <span class="logo"><img src="../../assets/googlelogo_color_92x30dp.png" alt="" height="30px" width="92px"></span>
         <span class="search-box-container" [class.mat-elevation-z1]="true">
             <span class="search-box">
                 <span>
-                    <mat-icon aria-hidden="false" aria-label="Search" style="color: blue;">search</mat-icon>
                     <input type="text" name="searchTextBox" id="searchTextBox" [(ngModel)]="searchText" (input)="filterSearchTopics($event.target.value)"/>
                     <mat-icon aria-hidden="false" aria-label="Microphone" style="color: blue;">mic</mat-icon>
+                    <mat-icon aria-hidden="false" aria-label="Search" style="color: blue;">search</mat-icon>
                 </span>
             </span>
             <span class="suggestions">
@@ -32,47 +32,15 @@
         </span>
         
         <span class="results">
-            <span class="result">
-                <span class="targetTitle">defaultTile</span>
-                <span class="targetLink">#</span>
-                <span class="twoLineDescription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident earum quaerat fugiat sint ipsam reiciendis vitae eius aspernatur, perspiciatis, deserunt dicta dolor, accusamus exercitationem illo reprehenderit excepturi nisi nemo accusantium.</span>
-                <span class="relatedJumpLinks">Links</span>
-            </span>
-            <span class="result">
-                <span class="targetTitle">defaultTile</span>
-                <span class="targetLink">#</span>
-                <span class="twoLineDescription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident earum quaerat fugiat sint ipsam reiciendis vitae eius aspernatur, perspiciatis, deserunt dicta dolor, accusamus exercitationem illo reprehenderit excepturi nisi nemo accusantium.</span>
-                <span class="relatedJumpLinks">Links</span>
-            </span>
-            <span class="result">
-                <span class="targetTitle">defaultTile</span>
-                <span class="targetLink">#</span>
-                <span class="twoLineDescription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident earum quaerat fugiat sint ipsam reiciendis vitae eius aspernatur, perspiciatis, deserunt dicta dolor, accusamus exercitationem illo reprehenderit excepturi nisi nemo accusantium.</span>
-                <span class="relatedJumpLinks">Links</span>
-            </span>
-            <span class="result">
-                <span class="targetTitle">defaultTile</span>
-                <span class="targetLink">#</span>
-                <span class="twoLineDescription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident earum quaerat fugiat sint ipsam reiciendis vitae eius aspernatur, perspiciatis, deserunt dicta dolor, accusamus exercitationem illo reprehenderit excepturi nisi nemo accusantium.</span>
-                <span class="relatedJumpLinks">Links</span>
-            </span>
-            <span class="result">
-                <span class="targetTitle">defaultTile</span>
-                <span class="targetLink">#</span>
-                <span class="twoLineDescription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident earum quaerat fugiat sint ipsam reiciendis vitae eius aspernatur, perspiciatis, deserunt dicta dolor, accusamus exercitationem illo reprehenderit excepturi nisi nemo accusantium.</span>
-                <span class="relatedJumpLinks">Links</span>
-            </span>
-            <span class="result">
-                <span class="targetTitle">defaultTile</span>
-                <span class="targetLink">#</span>
-                <span class="twoLineDescription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident earum quaerat fugiat sint ipsam reiciendis vitae eius aspernatur, perspiciatis, deserunt dicta dolor, accusamus exercitationem illo reprehenderit excepturi nisi nemo accusantium.</span>
-                <span class="relatedJumpLinks">Links</span>
-            </span>
-            <span class="result">
-                <span class="targetTitle">defaultTile</span>
-                <span class="targetLink">#</span>
-                <span class="twoLineDescription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident earum quaerat fugiat sint ipsam reiciendis vitae eius aspernatur, perspiciatis, deserunt dicta dolor, accusamus exercitationem illo reprehenderit excepturi nisi nemo accusantium.</span>
-                <span class="relatedJumpLinks">Links</span>
+            <span class="result" *ngFor="let searchResult of searchResults">
+                <span class="targetTitle">{{searchResult.title}}</span>
+                <span class="targetLink">{{searchResult.link}}</span>
+                <span class="twoLineDescription">{{searchResult.snippet}}</span>
+                <span *ngIf="searchResult.sitelinks && searchResult.sitelinks.inline">
+                    <span  class="relatedJumpLinks" *ngFor="let inlineLink of searchResult.sitelinks.inline">
+                        <a [href]="inlineLink.link">{{inlineLink.title}}</a>
+                    </span>
+                </span>
             </span>
         </span>
     </section>
