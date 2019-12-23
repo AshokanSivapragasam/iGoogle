@@ -1,0 +1,172 @@
+header {
+    margin: 0 15px 0 15px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+header>span {
+    padding-left: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header>span>button {
+    padding: 6px;
+    background-color: #4386fa;
+    border: none;
+    font-weight: 400;
+    font-size: 13px;
+    color: ivory;
+}
+
+main {
+    width: 100%;
+    height: 66%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+}
+
+main>span {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main>span>span {
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+main>.logo>img {
+    width: 272px;
+    height: 92px;
+}
+
+.search-box-container {
+    width: 582px !important;
+    display: flex;
+    flex-direction: column !important;
+    justify-content: center;
+    border: 1px solid lightgray;
+    border-radius: 20px;
+    z-index: 9999;
+}
+
+.search-box-container>span {
+    width: 100%;
+    display: flex;
+    flex-direction: column !important;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-box>span, .suggestions>span {
+    width: 100%;
+    padding: 0 4px 0 4px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.search-box>span>*, .suggestions>span>* {
+    padding: 0 4px 0 4px;
+}
+
+.search-box>span>input {
+    border: none;
+    width: 487px;
+    height: 34px;
+    font-size: 14px;
+}
+
+.search-box>span>input:focus {
+    outline: none;
+}
+
+.suggestions {
+    display: none !important;
+}
+
+.suggestions>span:hover {
+    background-color: lightpink;
+}
+
+.search-box-container:focus-within .suggestions {
+    display: flex !important;
+}
+
+.action-cta>button {
+    margin: 10px;
+    padding: 10px;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 3px;
+}
+
+.action-cta>button:hover {
+    margin: 10px;
+    padding: 10px;
+    background-color: ivory;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+}
+
+.other-langs>* {
+    padding: 4px;
+    font-size: 14px;
+}
+
+footer {
+    margin: 0 15px 0 15px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+footer>span {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+footer>span>.float-left, footer>span>.float-right {
+    display: flex;
+    flex-direction: row;
+    flex: .5;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+footer>span>.float-right {
+    justify-content: flex-end !important;
+}
+
+footer>span>a, footer>span>.float-left>a, footer>span>.float-right>a {
+    padding: 5px;
+}
+
+a {
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    color: grey;
+    font-size: 15px;
+    transition: all .5s ease-in-out;
+}
+
+a:hover {
+    text-decoration: underline;
+    text-decoration-color: grey;
+}

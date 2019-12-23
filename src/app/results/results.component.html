@@ -1,0 +1,79 @@
+<section class="result-layout-container">
+    <section style="width: 100%; position: fixed; margin: 0; top: 0; padding: 10px; background-color: greenyellow; z-index: 10000;">
+    <section class="result-layout-header">
+        <span class="logo"><img src="../../assets/googlelogo_color_92x30dp.png" alt="" height="30px" width="92px"></span>
+        <span class="search-box-container" [class.mat-elevation-z1]="true">
+            <span class="search-box">
+                <span>
+                    <mat-icon aria-hidden="false" aria-label="Search" style="color: blue;">search</mat-icon>
+                    <input type="text" name="searchTextBox" id="searchTextBox" [(ngModel)]="searchText" (input)="filterSearchTopics($event.target.value)"/>
+                    <mat-icon aria-hidden="false" aria-label="Microphone" style="color: blue;">mic</mat-icon>
+                </span>
+            </span>
+            <span class="suggestions">
+                <span *ngFor="let searchTopic of searchTopics" (mouseover)="searchFor(searchTopic)">
+                    <mat-icon aria-hidden="false" aria-label="Search" style="color: gray;">search</mat-icon>
+                    <p>{{searchTopic}}</p>
+                </span>
+            </span>
+        </span>
+        <span class="sign-in">Sign in</span>
+    </section>
+    </section>
+    <section class="result-layout-section">
+        <span class="switch-links">
+            <a href="">Link</a>
+            <a href="">Link</a>
+            <a href="">Link</a>
+            <a href="">Link</a>
+            <a href="">Link</a>
+            <a href="">Link</a>
+            <a href="">Link</a>
+        </span>
+        
+        <span class="results">
+            <span class="result">
+                <span class="targetTitle">defaultTile</span>
+                <span class="targetLink">#</span>
+                <span class="twoLineDescription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident earum quaerat fugiat sint ipsam reiciendis vitae eius aspernatur, perspiciatis, deserunt dicta dolor, accusamus exercitationem illo reprehenderit excepturi nisi nemo accusantium.</span>
+                <span class="relatedJumpLinks">Links</span>
+            </span>
+            <span class="result">
+                <span class="targetTitle">defaultTile</span>
+                <span class="targetLink">#</span>
+                <span class="twoLineDescription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident earum quaerat fugiat sint ipsam reiciendis vitae eius aspernatur, perspiciatis, deserunt dicta dolor, accusamus exercitationem illo reprehenderit excepturi nisi nemo accusantium.</span>
+                <span class="relatedJumpLinks">Links</span>
+            </span>
+            <span class="result">
+                <span class="targetTitle">defaultTile</span>
+                <span class="targetLink">#</span>
+                <span class="twoLineDescription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident earum quaerat fugiat sint ipsam reiciendis vitae eius aspernatur, perspiciatis, deserunt dicta dolor, accusamus exercitationem illo reprehenderit excepturi nisi nemo accusantium.</span>
+                <span class="relatedJumpLinks">Links</span>
+            </span>
+            <span class="result">
+                <span class="targetTitle">defaultTile</span>
+                <span class="targetLink">#</span>
+                <span class="twoLineDescription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident earum quaerat fugiat sint ipsam reiciendis vitae eius aspernatur, perspiciatis, deserunt dicta dolor, accusamus exercitationem illo reprehenderit excepturi nisi nemo accusantium.</span>
+                <span class="relatedJumpLinks">Links</span>
+            </span>
+            <span class="result">
+                <span class="targetTitle">defaultTile</span>
+                <span class="targetLink">#</span>
+                <span class="twoLineDescription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident earum quaerat fugiat sint ipsam reiciendis vitae eius aspernatur, perspiciatis, deserunt dicta dolor, accusamus exercitationem illo reprehenderit excepturi nisi nemo accusantium.</span>
+                <span class="relatedJumpLinks">Links</span>
+            </span>
+            <span class="result">
+                <span class="targetTitle">defaultTile</span>
+                <span class="targetLink">#</span>
+                <span class="twoLineDescription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident earum quaerat fugiat sint ipsam reiciendis vitae eius aspernatur, perspiciatis, deserunt dicta dolor, accusamus exercitationem illo reprehenderit excepturi nisi nemo accusantium.</span>
+                <span class="relatedJumpLinks">Links</span>
+            </span>
+            <span class="result">
+                <span class="targetTitle">defaultTile</span>
+                <span class="targetLink">#</span>
+                <span class="twoLineDescription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident earum quaerat fugiat sint ipsam reiciendis vitae eius aspernatur, perspiciatis, deserunt dicta dolor, accusamus exercitationem illo reprehenderit excepturi nisi nemo accusantium.</span>
+                <span class="relatedJumpLinks">Links</span>
+            </span>
+        </span>
+    </section>
+</section>

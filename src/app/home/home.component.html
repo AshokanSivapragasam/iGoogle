@@ -1,0 +1,58 @@
+<header>
+    <span><a href="#">Gmail</a></span>
+    <span><a href="#">Images</a></span>
+    <span><button>Sign in</button></span>
+</header>
+<main>
+    <span>
+        <span class="logo"><img src="../../assets/googlelogo_color_272x92dp.png" alt="Google Logo"></span>
+        <span class="search-box-container" [class.mat-elevation-z1]="true">
+            <span class="search-box">
+                <span>
+                    <mat-icon aria-hidden="false" aria-label="Search" style="color: blue;">search</mat-icon>
+                    <input type="text" name="searchTextBox" id="searchTextBox" [(ngModel)]="searchText" (input)="filterSearchTopics($event.target.value)"/>
+                    <mat-icon aria-hidden="false" aria-label="Microphone" style="color: blue;">mic</mat-icon>
+                </span>
+            </span>
+            <span class="suggestions">
+                <span *ngFor="let searchTopic of searchTopics" (mouseover)="searchFor(searchTopic)">
+                    <mat-icon aria-hidden="false" aria-label="Search" style="color: gray;">search</mat-icon>
+                    <p>{{searchTopic}}</p>
+                </span>
+            </span>
+        </span>
+        <span class="action-cta">
+            <button>Google Search</button>
+            <button>I'm feeling lucky</button>
+        </span>
+        <span class="invitations"><a href="#">Be sure to check the internet security!</a></span>
+        <span class="other-langs">
+            <span>Google offered in:</span> 
+            <a href="">हिन्दी</a>
+            <a href="">বাংলা</a>
+            <a href="">తెలుగు</a>
+            <a href="">मराठी</a>
+            <a href="">தமிழ்</a>
+            <a href="">ગુજરાતી</a>
+            <a href="">ಕನ್ನಡ</a>
+            <a href="">മലയാളം</a>
+            <a href="">ਪੰਜਾਬੀ</a>
+        </span>
+    </span>
+</main>
+<footer>
+    <span><a href="#">India</a></span>
+    <span>
+        <span class="float-left">
+            <a href="#">Business</a>
+            <a href="#">Advertising</a>
+            <a href="#">About</a>
+            <a href="#">How Search works</a>
+        </span>
+        <span class="float-right">
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Settings</a>
+        </span>
+    </span>
+</footer>
